@@ -1,0 +1,22 @@
+[
+    {
+        "gameName": "Fortnite",
+        "images": [
+        "/images/fortnite/1.jpg",
+        "/images/fortnite/2.jpg",
+        "/images/fortnite/3.jpg",
+        "/images/fortnite/4.jpg",
+        "/images/fortnite/5.jpg"
+        ]    
+    },
+    {
+        "gameName": "Pokemon Fire Red",
+        "images": [
+        "/images/pokemon/1.jpg",
+        "/images/pokemon/2.jpg",
+        "/images/pokemon/3.jpg",
+        "/images/pokemon/4.jpg",
+        "/images/pokemon/5.jpg"
+        ]    
+    }
+]
