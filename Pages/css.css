@@ -32,12 +32,26 @@ html, body {
 }
 
 .imgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 1%;
     width: 60%;
     height: 60%;
-    background-color: purple;
-    border: 5px solid darkgray;
+    border: 5px solid red;
     box-shadow: 0 0 10px black;
+}
+
+#game-image {
+    width: 100%;
+    height: 100%;
+}
+
+#game {
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 2%;
 }
 
 .divBtns {
@@ -65,13 +79,12 @@ html, body {
     font-weight: bold;
     background-color: #1E293B;
     color: white;
-    opacity: 0.5;
-    cursor: not-allowed;
+    cursor: pointer;
 }
 
-#img1{
-    opacity: 1;
-    cursor: pointer;
+.disabledBtns {
+    cursor: not-allowed;
+    opacity: 0.5;
 }
 
 .styleBtns {
@@ -114,4 +127,26 @@ html, body {
     outline: none;
     border: none;
     padding-left: 10px;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    border: 1px solid white;
+    background-color: black;
+    overflow-y: auto;
+    padding: 0;
+    list-style: none;
+    z-index: 3;
+    width: 40%;
+    top: 81%;
+}
+
+.liGame {
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid white;
+    font-size: 20px;
+    width: auto;
+    color: white;
 }

@@ -8,24 +8,25 @@
 </head>
 <body>
     <div class="geralContainer">
-        <span class="highestUserScore">Pontuação mais alta: Murilo, 25 Pontos</span>
+        <!-- <span class="highestUserScore">Pontuação mais alta: Murilo, 25 Pontos</span> -->
         <div class="centerContainer">
             <div class="imgContainer">
-                <img src="" alt="" id="gameImage">
+                <img src="" alt="" id="game-image">
             </div>
             <div class="divBtns">
                 <div class="divBtnImages">
-                    <button class="btnImages" id="img1">1</button>
-                    <button class="btnImages" id="img2">2</button>
-                    <button class="btnImages" id="img3">3</button>
-                    <button class="btnImages" id="img4">4</button>
-                    <button class="btnImages" id="img5">5</button>
+                    <button class="btnImages" id="img-1">1</button>
+                    <button class="btnImages disabledBtns" id="img-2" disabled>2</button>
+                    <button class="btnImages disabledBtns" id="img-3" disabled>3</button>
+                    <button class="btnImages disabledBtns" id="img-4" disabled>4</button>
+                    <button class="btnImages disabledBtns" id="img-5" disabled>5</button>
                 </div>
                 <button id="priorBtn" class="styleBtns"> Pular </button>
             </div>
-            <span id="chances">5 Chances restantes</span>
-            <input type="text" class="inputStyle" placeholder="Pesquise um jogo...">
-            <!-- <ul class="dropdown">
+            <span id="chances">Tentativas restantes: 5</span>
+            <span id="game"></span>
+            <input type="text" class="inputStyle" id="game-guess" placeholder="Pesquise um jogo...">
+            <ul class="dropdown">
                 <li class="liGame">The Legend of Zelda</li>
                 <li class="liGame">The Legend of Zelda: Ocarina of Time</li>
                 <li class="liGame">The Legend of Zelda: Majora's Mask</li>
@@ -261,8 +262,9 @@
                 <li class="liGame">Warcraft III</li>
                 <li class="liGame">Warcraft III: Reforged</li>
                 <li class="liGame">Hearthstone</li>
-            </ul> -->
-            <button class="btnStyle"> Enviar </button>
+            </ul>
+            <button class="btnStyle" id="guess"> Enviar </button>
+            <input type="hidden" id="game-attempt" value="0">
         </div>
     </div>
     <script src="/Pages/js.js"></script>

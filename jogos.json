@@ -2,21 +2,151 @@
     {
         "gameName": "Fortnite",
         "images": [
-        "/images/fortnite/1.jpg",
-        "/images/fortnite/2.jpg",
-        "/images/fortnite/3.jpg",
-        "/images/fortnite/4.jpg",
-        "/images/fortnite/5.jpg"
+        "/images/1/1.webp",
+        "/images/1/2.webp",
+        "/images/1/3.webp",
+        "/images/1/4.webp",
+        "/images/1/5.webp"
         ]    
     },
     {
-        "gameName": "Pokemon Fire Red",
+        "gameName": "Metal Gear Solid V: The Phantom Pain",
         "images": [
-        "/images/pokemon/1.jpg",
-        "/images/pokemon/2.jpg",
-        "/images/pokemon/3.jpg",
-        "/images/pokemon/4.jpg",
-        "/images/pokemon/5.jpg"
+        "/images/2/1.webp",
+        "/images/2/2.webp",
+        "/images/2/3.webp",
+        "/images/2/4.webp",
+        "/images/2/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Alien Isolation",
+        "images": [
+        "/images/3/1.webp",
+        "/images/3/2.webp",
+        "/images/3/3.webp",
+        "/images/3/4.webp",
+        "/images/3/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Among Us",
+        "images": [
+        "/images/4/1.webp",
+        "/images/4/2.webp",
+        "/images/4/3.webp",
+        "/images/4/4.webp",
+        "/images/4/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Celeste",
+        "images": [
+        "/images/5/1.webp",
+        "/images/5/2.webp",
+        "/images/5/3.webp",
+        "/images/5/4.webp",
+        "/images/5/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Dark Souls 2",
+        "images": [
+        "/images/6/1.webp",
+        "/images/6/2.webp",
+        "/images/6/3.webp",
+        "/images/6/4.webp",
+        "/images/6/5.webp"
+        ]    
+    },
+    {
+        "gameName": "God of War (2018)",
+        "images": [
+        "/images/7/1.webp",
+        "/images/7/2.webp",
+        "/images/7/3.webp",
+        "/images/7/4.webp",
+        "/images/7/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Hades",
+        "images": [
+        "/images/8/1.webp",
+        "/images/8/2.webp",
+        "/images/8/3.webp",
+        "/images/8/4.webp",
+        "/images/8/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Hollow Knight",
+        "images": [
+        "/images/9/1.webp",
+        "/images/9/2.webp",
+        "/images/9/3.webp",
+        "/images/9/4.webp",
+        "/images/9/5.webp"
+        ]    
+    },
+    {
+        "gameName": "The Last Of Us Part II",
+        "images": [
+        "/images/10/1.webp",
+        "/images/10/2.webp",
+        "/images/10/3.webp",
+        "/images/10/4.webp",
+        "/images/10/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Overwatch",
+        "images": [
+        "/images/11/1.webp",
+        "/images/11/2.webp",
+        "/images/11/3.webp",
+        "/images/11/4.webp",
+        "/images/11/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Portal",
+        "images": [
+        "/images/12/1.webp",
+        "/images/12/2.webp",
+        "/images/12/3.webp",
+        "/images/12/4.webp",
+        "/images/12/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Red Dead Redemption 2",
+        "images": [
+        "/images/13/1.webp",
+        "/images/13/2.webp",
+        "/images/13/3.webp",
+        "/images/13/4.webp",
+        "/images/13/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Sekiro Shadows Die Twice",
+        "images": [
+        "/images/14/1.webp",
+        "/images/14/2.webp",
+        "/images/14/3.webp",
+        "/images/14/4.webp",
+        "/images/14/5.webp"
+        ]    
+    },
+    {
+        "gameName": "Shadow of the Colossus",
+        "images": [
+        "/images/15/1.webp",
+        "/images/15/2.webp",
+        "/images/15/3.webp",
+        "/images/15/4.webp",
+        "/images/15/5.webp"
         ]    
     }
 ]
