@@ -33,7 +33,8 @@ router.post('/game/:id/guess', async (req, res) => {
         if (guess.toLowerCase() === game.gameName.toLowerCase()) {
             return res.json({ 
                 correct: true,
-                gameName: game.gameName
+                gameName: game.gameName,
+                images: game.images
             });
         } else {
             const nextImageIndex = parseInt(attempt) + 1;
@@ -42,13 +43,14 @@ router.post('/game/:id/guess', async (req, res) => {
                     limite: true,
                     correct: false,
                     gameName: game.gameName,
-                    gameImage: game.images
+                    images: game.images
                 });
             }
 
             return res.json({
                 correct: false,
-                image: game.images[nextImageIndex]
+                image: game.images[nextImageIndex] || game.images[4],
+                images: game.images
             });
         }
     } catch (error) {
