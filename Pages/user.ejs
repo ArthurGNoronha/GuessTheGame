@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Pages/css.css">
+    <title>Adivinhe o Jogo!</title>
+</head>
+<body>
+    <div class="geralContainer">
+        <div class="form">
+            <label for="user" class="lbUser">Digite seu nome para começar</label>
+            <input id="user" type="text">
+            <button type="submit" class="btnUser">Enviar</button>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.btnUser').addEventListener('click', async () => {
+            const user = document.getElementById('user').value;
+            if(!user) return alert('Digite um nome para começar');
+
+            const response = await fetch('/gamePage', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({user})
+            });
+
+            if(response.ok) {
+                const html = await response.text();
+                document.open();
+                document.write(html);
+                document.close();
+            }
+        });
+    </script>
+</body>
+</html>

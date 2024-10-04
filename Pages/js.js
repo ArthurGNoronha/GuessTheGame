@@ -20,7 +20,11 @@ inputDrop.addEventListener('input', () => {
 inputDrop.addEventListener('blur', () => {
     setTimeout(() => {
         dropdown.style.display = 'none';
-    }, 100);
+    }, 200);
+});
+
+inputDrop.addEventListener('focus', () => {
+    dropdown.style.display = 'block';
 });
 
 options.forEach((option) => {
@@ -59,6 +63,8 @@ async function handleGuess() {
         body: JSON.stringify({ guess, attempt })
     });
 
+    document.getElementById('game-guess').value = '';
+
     const data = await response.json();
     images = data.images;
     document.getElementById('chances').innerText = 'Tentativas restantes: ' + (4 - attempt);
@@ -71,7 +77,7 @@ async function handleGuess() {
     if (data.limite) {
         document.getElementById('chances').innerText = 'Boa sorte na próxima :/';
         document.getElementById('chances').style.color = 'red';
-        document.getElementById('game').innerHTML = `O jogo era: ${data.gameName}`;
+        document.getElementById('game').innerHTML = `O jogo era: <span class="green">${data.gameName}</span>`;
         document.getElementById('guess').style.display = 'none';
         document.getElementById('game-guess').style.display = 'none';
         document.getElementById('priorBtn').style.display = 'none';
@@ -81,9 +87,13 @@ async function handleGuess() {
 
     if (data.correct) {
         document.getElementById('chances').innerText = `Parabéns! Você acertou em ${attempt + 1} tentativas!`;
+        if(attempt === 0) {
+            document.getElementById('chances').classList.add('amassou');
+            document.getElementById('chances').innerText = 'UAU! Você acertou com UMA tentativa!';
+        }
         document.getElementById('guess').style.display = 'none';
         document.getElementById('game-guess').style.display = 'none';
-        document.getElementById('game').innerHTML = `O jogo era: ${data.gameName}`;
+        document.getElementById('game').innerHTML = `O jogo era: <span class="green">${data.gameName}</span>`;
         document.getElementById('priorBtn').style.display = 'none';
         images = data.images;
         enableBtns(4);

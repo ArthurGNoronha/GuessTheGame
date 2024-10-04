@@ -150,3 +150,55 @@ html, body {
     width: auto;
     color: white;
 }
+
+.amassou {
+    animation: rainbow-text 3.5s infinite;
+}
+
+@keyframes rainbow-text {
+    0% { color: red; }
+    14% { color: orange; }
+    28% { color: yellow; }
+    42% { color: rgb(119, 255, 119); }
+    57% { color: rgb(75, 75, 255); }
+    71% { color: rgb(194, 108, 255); }
+    85% { color: violet; }
+    100% { color: red; }
+}
+
+.green {
+    color: lightgreen;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+}
+
+#user {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.lbUser {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 1%;
+}
+
+.btnUser {
+    width: 21%;
+    height: 30px;
+    background-color: #059669;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}

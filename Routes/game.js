@@ -1,11 +1,27 @@
 const router = require('express').Router();
 const { ObjectId } = require('mongodb');
 const collections = require('../routes/db.js');
+const express = require('express');
+
+// router.get('/', (req, res) => {
+//     try {
+//         res.render('index');
+//     } catch(error) {
+//         console.error('Error:', error);
+//         res.status(500).send('Internal Server Error');
+//     }
+// });
 
 router.get('/', (req, res) => {
+    res.render('user');
+});
+
+router.post('/gamePage', async (req, res) => {
     try {
+        const name = req.body.user;
+        await collections.users.insertOne({ name });
         res.render('index');
-    } catch(error) {
+    } catch (error) {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');
     }
