@@ -35,16 +35,56 @@ options.forEach((option) => {
 });
 
 async function loadRandomGame() {
-    const response = await fetch('/random-game');
-    const data = await response.json();
+    try {
+        const response = await fetch('/random-game');
+        const data = await response.json();
+        
+        if (data.fim) {
+            document.getElementById('game').style.display = 'none';
+            document.getElementById('game-image').style.display = 'none';
+            document.getElementById('guess').style.display = 'none';
+            document.getElementById('game-guess').style.display = 'none';
+            document.getElementById('chances').style.display = 'none';
+            document.getElementById('nextGame').style.display = 'none';
+            document.querySelector('.imgContainer').style.display = 'none';
+            document.querySelector('.divBtns').style.display = 'none';
+            document.getElementById('fim').style.display = 'block';
+            return;
+        }
 
-    if (data.error) {
-        console.error('Erro ao carregar jogo:', data.error);
-        return;
+        if (data.error) {
+
+            console.error('Erro ao carregar jogo:', data.error);
+            return;
+        }
+
+        document.getElementById('game-image').src = data.image;
+        currentGameId = data.gameId;
+
+        document.getElementById('game-attempt').value = 0;
+        document.getElementById('chances').innerText = 'Tentativas restantes: 5';
+        document.getElementById('chances').style.color = 'white';
+        document.getElementById('chances').classList.remove('amassou');
+        document.getElementById('chances').classList.remove('green');
+
+        document.getElementById('game').innerHTML = '';
+        document.getElementById('game-guess').value = '';
+
+        document.getElementById('guess').style.display = 'block';
+        document.getElementById('game-guess').style.display = 'block';
+        document.getElementById('priorBtn').style.display = 'block';
+
+        document.getElementById('nextGame').style.display = 'none';
+
+        images = data.images;
+        document.querySelectorAll('.btnImages').forEach((btn) => {
+            btn.disabled = true;
+            btn.classList.add('disabledBtns');
+        });
+
+    } catch (error) {
+        console.error('Erro ao carregar o jogo:', error);
     }
-
-    document.getElementById('game-image').src = data.image;
-    currentGameId = data.gameId;
 }
 
 document.getElementById('priorBtn').addEventListener('click', handleGuess);
@@ -82,6 +122,7 @@ async function handleGuess() {
         document.getElementById('game-guess').style.display = 'none';
         document.getElementById('priorBtn').style.display = 'none';
         document.getElementById('game-image').src = data.images[4];
+        document.getElementById('nextGame').style.display = 'block';
         return;
     }
 
@@ -91,12 +132,17 @@ async function handleGuess() {
             document.getElementById('chances').classList.add('amassou');
             document.getElementById('chances').innerText = 'UAU! Você acertou com UMA tentativa!';
         }
+        if(attempt === 4) {
+            document.getElementById('chances').innerText = 'UUUUUFF! Você acertou na ULTIMA tentativa!';
+            document.getElementById('chances').style.color = 'lightgreen';
+        }
         document.getElementById('guess').style.display = 'none';
         document.getElementById('game-guess').style.display = 'none';
         document.getElementById('game').innerHTML = `O jogo era: <span class="green">${data.gameName}</span>`;
         document.getElementById('priorBtn').style.display = 'none';
         images = data.images;
         enableBtns(4);
+        document.getElementById('nextGame').style.display = 'block';
     } else {
         attempt++;
         document.getElementById('game-attempt').value = attempt;
@@ -118,6 +164,11 @@ document.querySelectorAll('.btnImages').forEach((btn) => {
         const image = images[index - 1];
         document.getElementById('game-image').src = image;
     });
+});
+
+document.getElementById('nextGame').addEventListener('click', () => {
+    loadRandomGame();
+    document.getElementById('nextGame').style.display = 'none';
 });
 
 window.onload = loadRandomGame;

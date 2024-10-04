@@ -13,6 +13,7 @@
             <div class="imgContainer">
                 <img src="" id="game-image">
             </div>
+            <span id="fim">Você terminou o jogo! Parabéns!</span>
             <div class="divBtns">
                 <div class="divBtnImages">
                     <button class="btnImages" id="img-1">1</button>
@@ -25,7 +26,7 @@
             </div>
             <span id="chances">Tentativas restantes: 5</span>
             <span id="game"></span>
-            <input type="text" class="inputStyle" id="game-guess" placeholder="Pesquise um jogo...">
+            <input type="text" class="inputStyle" id="game-guess" placeholder="Pesquise um jogo..." autocomplete="off">
             <ul class="dropdown">
                 <li class="liGame">The Legend of Zelda</li>
                 <li class="liGame">The Legend of Zelda: Ocarina of Time</li>
@@ -66,7 +67,7 @@
                 <li class="liGame">Dark Souls 3</li>
                 <li class="liGame">Demon's Souls</li>
                 <li class="liGame">Bloodborne</li>
-                <li class="liGame">Sekiro: Shadows Die Twice</li>
+                <li class="liGame">Sekiro Shadows Die Twice</li>
                 <li class="liGame">Elden Ring</li>
                 <li class="liGame">Nier</li>
                 <li class="liGame">Nier Automata</li>
@@ -265,6 +266,7 @@
             </ul>
             <button class="btnStyle" id="guess"> Enviar </button>
             <input type="hidden" id="game-attempt" value="0">
+            <button id="nextGame">Próximo Jogo!</button>
         </div>
     </div>
     <script src="/Pages/js.js"></script>

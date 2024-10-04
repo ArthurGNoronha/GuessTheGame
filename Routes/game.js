@@ -1,16 +1,6 @@
 const router = require('express').Router();
 const { ObjectId } = require('mongodb');
 const collections = require('../routes/db.js');
-const express = require('express');
-
-// router.get('/', (req, res) => {
-//     try {
-//         res.render('index');
-//     } catch(error) {
-//         console.error('Error:', error);
-//         res.status(500).send('Internal Server Error');
-//     }
-// });
 
 router.get('/', (req, res) => {
     res.render('user');
@@ -19,8 +9,14 @@ router.get('/', (req, res) => {
 router.post('/gamePage', async (req, res) => {
     try {
         const name = req.body.user;
-        await collections.users.insertOne({ name });
-        res.render('index');
+        
+        let randomGames = await collections.games.aggregate([{ $sample: { size: 3 } }]).toArray();
+
+        req.session.games = randomGames;
+        req.session.user = name;
+        req.session.currentGameIndex = 0;
+        
+        res.render('index', { randomGames });
     } catch (error) {
         console.error('Error:', error);
         res.status(500).send('Internal Server Error');
@@ -29,11 +25,26 @@ router.post('/gamePage', async (req, res) => {
 
 router.get('/random-game', async (req, res) => {
     try {
-        const game = await collections.games.aggregate([{ $sample: { size: 1 } }]).next();
+        if (!req.session.games || req.session.currentGameIndex === undefined) {
+            return res.status(400).json({ error: 'Nenhum jogo encontrado. Tente reiniciar a sessão.' });
+        }
+
+        const currentIndex = req.session.currentGameIndex;
+        
+        if (currentIndex >= 3) {
+            res.json({ fim: true });
+            res.render('fim');
+            return;
+        }
+
+        const game = req.session.games[currentIndex];
         const image = game.images[0];
-    
+
+        req.session.currentGameIndex += 1;
+
         res.json({ image, gameId: game._id });
     } catch (error) {
+        console.error('Erro ao carregar jogo:', error);
         res.status(500).json({ error: 'Erro ao carregar jogo' });
     }
 });

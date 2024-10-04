@@ -151,6 +151,18 @@ html, body {
     color: white;
 }
 
+#nextGame {
+    display: none;
+    width: 30%;
+    background-color: #2087AC;
+    color: white;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    /* margin-top: 2%; */
+    cursor: pointer;
+}
+
 .amassou {
     animation: rainbow-text 3.5s infinite;
 }
@@ -168,6 +180,17 @@ html, body {
 
 .green {
     color: lightgreen;
+}
+
+#fim {
+    display: none;
+    width: 50%;
+    position: absolute;
+    top: 45%;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
 }
 
 .form {
