@@ -48,7 +48,10 @@ async function loadRandomGame() {
             document.getElementById('nextGame').style.display = 'none';
             document.querySelector('.imgContainer').style.display = 'none';
             document.querySelector('.divBtns').style.display = 'none';
+            document.querySelector('.highestUserScore').style.display = 'none';
             document.getElementById('fim').style.display = 'block';
+            document.getElementById('score').style.display = 'block';
+            document.getElementById('score').innerText = `Sua pontuação foi: ${data.score}`;
             return;
         }
 

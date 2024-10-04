@@ -8,12 +8,15 @@
 </head>
 <body>
     <div class="geralContainer">
-        <!-- <span class="highestUserScore">Pontuação mais alta: Murilo, 25 Pontos</span> -->
-        <div class="centerContainer">
+        <span class="highestUserScore">
+            Pontuação mais alta: <%= highScore ? `${highScore.name}, ${highScore.score} pontos` : 'N/A' %>
+        </span>        
+            <div class="centerContainer">
             <div class="imgContainer">
                 <img src="" id="game-image">
             </div>
             <span id="fim">Você terminou o jogo! Parabéns!</span>
+            <span id="score"></span>
             <div class="divBtns">
                 <div class="divBtnImages">
                     <button class="btnImages" id="img-1">1</button>

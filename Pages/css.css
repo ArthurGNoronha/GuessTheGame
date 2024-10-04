@@ -193,6 +193,17 @@ html, body {
     font-weight: bold;
 }
 
+#score {
+    display: none;
+    width: 50%;
+    position: absolute;
+    top: 55%;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+}
+
 .form {
     display: flex;
     flex-direction: column;
